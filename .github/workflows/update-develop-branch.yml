@@ -1,0 +1,31 @@
+# name: Update Develop
+
+# on:
+#    push:
+#       branches:
+#          - develop
+
+# jobs:
+#    deploy:
+#       name: Creating development deployment
+#       runs-on: ubuntu-latest
+#       steps:
+#          - uses: actions/checkout@master
+#          - name: Use Node.js 14
+#            uses: actions/setup-node@v1
+#            with:
+#               node-version: "14.x"
+#          - name: Create Build
+#            run: |
+#               npm install
+#               CI=false npm run build
+#          - name: Configure AWS credentials
+#            uses: aws-actions/configure-aws-credentials@v1
+#            with:
+#               aws-access-key-id: ${{ secrets.BR_AWS_ACCESS_KEY_ID }}
+#               aws-secret-access-key: ${{ secrets.BR_AWS_SECRET_ACCESS_KEY }}
+#               aws-region: us-east-1
+#          - name: Copy files to S3 with the AWS CLI
+#            run: |
+#               aws s3 rm --recursive s3://${{ secrets.BR_AWS_S3_BUCKET }}/{repo-name}/develop/
+#               aws s3 sync --acl public-read --include 'build/' build s3://${{ secrets.BR_AWS_S3_BUCKET }}/{repo-name}/develop/

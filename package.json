@@ -1,0 +1,28 @@
+{
+   "name": "react-vite",
+   "version": "0.0.0",
+   "scripts": {
+      "start": "vite --open",
+      "build": "tsc && vite build",
+      "preview": "vite preview --port 8080"
+   },
+   "dependencies": {
+      "@reduxjs/toolkit": "^1.7.2",
+      "@vitejs/plugin-react": "^1.1.3",
+      "esri-loader": "^3.4.0",
+      "npm-check-updates": "^12.3.0",
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2",
+      "react-redux": "^7.2.6",
+      "vite": "^2.7.3"
+   },
+   "devDependencies": {
+      "@types/arcgis-js-api": "^4.22.0",
+      "@types/react": "^17.0.33",
+      "@types/react-dom": "^17.0.10",
+      "prettier": "^2.5.1",
+      "pretty-quick": "^3.1.3",
+      "sass": "^1.45.0",
+      "typescript": "^4.4.4"
+   }
+}
